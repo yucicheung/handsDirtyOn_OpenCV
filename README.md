@@ -1,6 +1,6 @@
-# openCV实战
+# Hands on OpenCV
 ## Introduction
-Simple hands-on prcatice projects for OpenCV, written in C++/Qt.
+Simple hands-on practice projects for OpenCV, written in C++/Qt.
 
 ## prerequisites
 - Ubuntu16.04

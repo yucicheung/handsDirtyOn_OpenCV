@@ -15,3 +15,27 @@ OpenCV库被划分为多个模块，这些模块编译成库文件后，位于li
 #include<opencv2/core/core.hpp>
 #include<opencv2/highgui/highgui.hpp>
 ```
+
+## 库文件链接
+- unix
+  - 可以直接指定静态和动态文件位置进行;
+  - 也可以使用`pkg-config`工具包辅助配置正确的编辑器选项和库文件(自动i决定链接什么文件)。在使用CMake安装OpenCV时，unix-install包含一个`opencv.pc`文件，`pkg-config`读取该文件来决定编译时的参数，此时跨平台的qmake项目文件变为如下：
+```
+unix{
+	CONFIG += link_pkgconfig
+	PKGCONFIG += opencv
+}
+```
+
+- win32
+```
+win32{
+INCLUDEPATH += c:\OpenCV2.2\include\
+LIBS += -LC:\OpenCV2.2\lib\
+-lopencv_core220\
+-lopencv_highgui220\
+-lopencv_improc220\
+}
+
+```
+
